@@ -28,6 +28,11 @@ class Locations {
           styles: [{ color: "blue" }],
         },
       }).addTo(map);
+      this.locations = [];
+      let search = $(".search");
+      let locations = $(".locations");
+      search.val('');
+      locations.slideUp(250);
     });
   }
 }

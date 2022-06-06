@@ -25,8 +25,9 @@ function autoCompleteLocation(map) {
   let api = `https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248f5aeefad36a74b7fbc0428cf783e8f21&text=`;
   let search = $(".search");
   let locations = $(".locations");
-
+ 
   search.on("input", (event) => {
+    locations.hide();
     value = event.target.value;
     if (value !== "" || "") {
       fetchData(api + value, (data) => {
@@ -35,6 +36,7 @@ function autoCompleteLocation(map) {
           features.forEach(location=>{
               new Location(locations,location,map);
           })
+          locations.slideDown(250);
       });
     }
     else{
