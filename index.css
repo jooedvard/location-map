@@ -24,7 +24,7 @@ html {
 }
 .container {
   display: grid;
-  grid-template-columns: 20vw 80vw;
+  grid-template-columns: .25fr 1fr;
 }
 .cc{
     font-weight: bolder;
