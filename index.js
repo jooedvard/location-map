@@ -17,11 +17,12 @@ function createMap(domElement, lat, long) {
   let map = L.map(domElement).setView([lat, long], 10);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
   autoCompleteLocation(map);
+  
 }
 
 
 function autoCompleteLocation(map) {
-  let api = `https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624810b913f2e42649f6b248346a06d229fb&text=`;
+  let api = `https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248f5aeefad36a74b7fbc0428cf783e8f21&text=`;
   let search = $(".search");
   let locations = $(".locations");
 
