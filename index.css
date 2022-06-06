@@ -14,18 +14,36 @@ html {
   justify-content: space-evenly;
   padding: 0.5rem;
   font-family: var(--main-font-family);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #map {
-  height:90vh;
+  height: 90vh;
   width: 95%;
   border-radius: 10px;
 }
 .container {
   display: grid;
-  grid-template-columns: .25fr 1fr;
+  grid-template-columns: 0.25fr 1fr;
 }
-.cc{
-    font-weight: bolder;
+.cc {
+  font-weight: bolder;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  gap: 1rem;
+}
+.locations {
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 90%;
+  margin: auto;
+}
+* {
+  font-family: var(--main-font-family);
 }
