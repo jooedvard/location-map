@@ -48,6 +48,15 @@ html {
   margin: auto;
   gap: 1rem;
 }
+.inputs input{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  font-size: .9rem; 
+  padding: .5rem;
+  text-indent: 15px;
+  border-radius: 5px;
+}
 .locations {
   display: flex;
   padding: 0.5rem;
