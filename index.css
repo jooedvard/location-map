@@ -51,7 +51,7 @@ html {
 .inputs input{
   outline: none;
   border: none;
-  border-bottom: 1px solid gainsboro;
+  border: 1px solid gainsboro;
   font-size: .9rem; 
   padding: .5rem;
   text-indent: 15px;
