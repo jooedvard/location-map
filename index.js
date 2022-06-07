@@ -4,12 +4,19 @@ $(() => {
 
 function main() {
   getInfoFromIP();
+
   getUserLocation((location) => {
     let map = document.querySelector("#map");
     let { latitude, longitude } = location.coords;
     createMap(map, latitude, longitude);
     onAddLocations();
   });
+
+  menuOpenEvent();
+  menuCloseEvent();
+  closeMenu();  
+
+  
 }
 function createMap(domElement, lat, long) {
   let map = L.map(domElement).setView([lat, long], 10);
@@ -66,7 +73,6 @@ async function getInfoFromIP() {
   let url = "https://api.ipdata.co?api-key=" + apikey;
   fetchData(url, (data) => {
     let info = new Userinfo(data, userinfo);
-    info.showData();
   });
 }
 
@@ -76,4 +82,28 @@ function getUserLocation(callback) {
       callback(data);
     });
   }
+}
+
+function menuCloseEvent(){
+  let menuCloser = $(".menu-closer");
+  menuCloser.on("click",()=>{
+      closeMenu();
+  });
+}
+
+function menuOpenEvent(){
+  let menuOpener = $(".menu-opener");
+  menuOpener.on("click",()=>{
+      openMenu();
+  });
+}
+
+function openMenu(){
+  let menu = $(".menu");
+  menu.show(250);
+}
+
+function closeMenu(){
+  let menu = $(".menu");
+  menu.hide(250);
 }

@@ -12,16 +12,4 @@ class Userinfo{
         console.log(this.languages);
     }
 
-    showData(){
-        this.parent.empty();
-        this.parent.append(`
-        <div class="cc">${this.country_code}</div>
-        <div><img src="${this.flag}"/></div>
-        <div>${this.ip}</div>
-        <div>${this.city}</div>
-        <div>${this.country_name}</div>
-        <div>${this.languages[0].native}</div>`
-        );
-    }
-
 }
