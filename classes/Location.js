@@ -11,6 +11,7 @@ class Locations {
     if (this.locations.length == 2) {
       location2.val(location.data.properties.label);
       this.createPlan();
+      
      
     }
     else{

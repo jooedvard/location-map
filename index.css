@@ -33,7 +33,7 @@ body{
   left: 0px;
   padding: 1rem;
   border-radius: 5px;
-  
+  background-color: rgba(255, 255, 255, 0.9);
 
 }
 .inputs {
@@ -41,6 +41,7 @@ body{
   flex-direction: column;
   width: 90%;
   margin: auto;
+  margin-top: 1rem;
   gap: 1rem;
 }
 .inputs input{
@@ -60,6 +61,17 @@ body{
   gap: 0.5rem;
   max-width: 90%;
   margin: auto;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.locations > div{
+  padding: .25rem;
+}
+.locations > div:hover{
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 * {
   font-family: var(--main-font-family);
@@ -68,6 +80,48 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  background-color: white;
   z-index: 500;
+  cursor: pointer;
+  width: 30px;
+  
+}
+.icon{
+  max-width: 100%;
+  max-height: 100%;
+}
+.icon2{
+  width: 25px;
+  height: auto;
+}
+.already-visited-locations{
+  
+  margin: auto;
+  margin-top: 1rem;
+  width: 90%;
+  min-height: 15rem;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.already-visited-location{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.already-visited-location:hover{
+  background-color: rgba(236, 58, 58, 0.2);
+  font-weight: 500;
+  transition: ease-in-out .1s;
+}
+.visited-country{
+  display: flex;
+  flex-direction: column;
+}
+.history{
+  width: 90%;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  display: block;
 }

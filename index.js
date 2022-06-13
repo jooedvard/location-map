@@ -10,6 +10,7 @@ function main() {
     let { latitude, longitude } = location.coords;
     createMap(map, latitude, longitude);
     onAddLocations();
+  
   });
 
   menuOpenEvent();
@@ -22,6 +23,7 @@ function createMap(domElement, lat, long) {
   let map = L.map(domElement).setView([lat, long], 10);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
   autoCompleteLocation(map);
+  onVisitedLocations(map);
 }
 
 function autoCompleteLocation(map) {
@@ -50,8 +52,29 @@ function autoCompleteLocation(map) {
 function onAddLocations() {
   let places = new Locations();
   $(window).on("addLocations", (event) => {
-    places.add(event.detail);
+    let locations = $(".locations");
+    let {detail} = event;
+    let searched = addSearchedLocation(detail);
+
+    places.add(detail);
+    locations.slideUp(250);
   });
+}
+
+function onVisitedLocations(map){
+  $(window).on("See-Visited-Location",(evt) => {
+    let {coordinates} = evt.detail;
+    let long = coordinates[0];
+    let lat = coordinates[1];
+    map.flyTo([lat, long], 12)
+   
+  })
+}
+
+function addSearchedLocation(data){
+  let searchedLocationDom = $(".already-visited-locations");
+  let searchedLocation = new VisitedLocation(searchedLocationDom,data);
+  return searchedLocation;
 }
 
 async function fetchData(url, callback,onerror) {
@@ -85,17 +108,23 @@ function getUserLocation(callback) {
 }
 
 function menuCloseEvent(){
+  let menuOpener = $(".menu-opener");
   let menuCloser = $(".menu-closer");
   menuCloser.on("click",()=>{
       closeMenu();
+      menuCloser.hide();
+      menuOpener.show();
   });
 }
 
 function menuOpenEvent(){
   let menuOpener = $(".menu-opener");
+  let menuCloser = $(".menu-closer");
   menuOpener.on("click",()=>{
       openMenu();
-  });
+      menuOpener.hide();
+      menuCloser.show();
+    });
 }
 
 function openMenu(){
