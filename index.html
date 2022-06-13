@@ -30,10 +30,12 @@
     />
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    
     <link rel="stylesheet" href="index.css" />
     <script src="classes/User.js"></script>
     <script src="classes/Location.js"></script>
     <script src="classes/VisitedLocation.js"></script>
+    <script src="classes/PointOfInteres.js"></script>
     <script src="index.js"></script>
     <title>Document</title>
   </head>
@@ -43,8 +45,7 @@
       <div class="menu">
         <div class="menu-closer"><img src="icons/back.png" class="icon"/></div>
         <div class="inputs">
-          <input type="text" class="search" name="search" placeholder="Start" />
-          <input type="text" class="search" name="search" placeholder="End" />
+          <input type="text" class="search" name="search" placeholder="Add location" />
           <input type="text" disabled id="location1" />
           <input type="text" disabled id="location2" />
         </div>

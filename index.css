@@ -11,8 +11,8 @@ body{
   margin: 0%;
   padding: 0;
 }
-.leaflet-control-container {
-  display: none;
+#map > div.leaflet-control-container > div.leaflet-top.leaflet-left > div{
+ display: none;
 }
 
 

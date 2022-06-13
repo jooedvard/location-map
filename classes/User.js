@@ -9,7 +9,6 @@ class Userinfo{
         this.emoji_unicode = emoji_unicode;
         this.languages = languages;
         this.parent = domElement;
-        console.log(this.languages);
     }
 
 }

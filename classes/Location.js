@@ -1,3 +1,4 @@
+
 class Locations {
   constructor() {
     this.locations = [];
@@ -12,12 +13,13 @@ class Locations {
       location2.val(location.data.properties.label);
       this.createPlan();
       
-     
-    }
-    else{
+
+    } else {
       location1.val(location.data.properties.label);
     }
   }
+
+ 
 
   createPlan() {
     let road = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf6248f5aeefad36a74b7fbc0428cf783e8f21&start=${this.locations[0].coordinates[0]},${this.locations[0].coordinates[1]}&end=${this.locations[1].coordinates[0]},${this.locations[1].coordinates[1]}`;
@@ -55,8 +57,8 @@ class Locations {
     let location2 = $("#location2");
     let search = $(".search");
     let locations = $(".locations");
-    location1.val('');
-    location2.val('');
+    location1.val("");
+    location2.val("");
     search.val("");
     locations.slideUp(250);
   }

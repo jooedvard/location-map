@@ -54,10 +54,12 @@ function onAddLocations() {
   $(window).on("addLocations", (event) => {
     let locations = $(".locations");
     let {detail} = event;
+    let search = $(".search");
     let searched = addSearchedLocation(detail);
 
     places.add(detail);
     locations.slideUp(250);
+    search.val('');
   });
 }
 
@@ -95,7 +97,7 @@ async function getInfoFromIP() {
   let apikey = "e9dbdc6656b821659d74c53310cf97e3904c719ca9014eca74c572bc";
   let url = "https://api.ipdata.co?api-key=" + apikey;
   fetchData(url, (data) => {
-    let info = new Userinfo(data, userinfo);
+      new Userinfo(data, userinfo);
   });
 }
 
